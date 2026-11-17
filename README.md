@@ -2,6 +2,10 @@
 
 A lightweight, right-click Linux game launcher and prefix isolator optimized for older legacy hardware without native Vulkan support.
 
+## Supported Systems
+
+Designed for **Debian-based Linux distributions** (Ubuntu, Linux Mint, Pop!_OS, Debian, etc.) using `apt`.
+
 ## Features
 
 * **Right-Click Integration:** Run `.exe` files instantly from your file manager without opening a terminal.
@@ -14,7 +18,21 @@ A lightweight, right-click Linux game launcher and prefix isolator optimized for
 Open your terminal and run the following commands:
 
 ```bash
-git clone [https://github.com//NotVulkan-project.git](https://github.com/aliOSman33/NotVulkan-project.git)
+git clone [https://github.com/aliOSman33/NotVulkan-project.git](https://github.com/aliOSman33/NotVulkan-project.git)
 cd NotVulkan-project
 chmod +x install.sh
 ./install.sh
+```
+
+## ⚠️ Status & Performance Note
+
+* **Active Development:** This project is continuously being improved and updated. 
+* **Compatibility & Performance:** Many games have been tested, but performance may vary depending on your specific legacy hardware and the game engine. Some titles might experience minor performance drops or compatibility issues. Feedback and bug reports are always welcome!
+
+## 🤖 Acknowledgments
+
+* Developed with extensive assistance from Artificial Intelligence (AI) for scripting, structure design, and documentation.
+
+## License
+
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0).
