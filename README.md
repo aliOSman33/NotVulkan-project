@@ -39,7 +39,7 @@ chmod +x uninstall.sh
 
 **NotVulkan is a community-driven project in active development.** Because legacy hardware and game engines vary widely, your real-world testing and feedback are essential to making this tool better for everyone.
 
-* **Found a bug or a game that won't launch?** Please open a report on our [Issues Page](https://github.com) using the **Bug Report** template.
+* **Found a bug or a game that won't launch?** Please open a report on our [Issues Page](../../issues) using the **Bug Report** template.
 * **Have an idea or improvement?** Feel free to fork the repository and submit a Pull Request, or share your suggestions in the Issues tab.
 * **Compatibility & Performance:** Many games have been tested, but performance may vary depending on your specific legacy hardware and the game engine. Some titles might experience minor performance drops or compatibility issues. Sharing which games work on your system helps other users!
 
