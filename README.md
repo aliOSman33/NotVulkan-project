@@ -18,11 +18,22 @@ Designed for **Debian-based Linux distributions** (Ubuntu, Linux Mint, Pop!_OS, 
 Open your terminal and run the following commands:
 
 ```bash
-git clone [https://github.com/aliOSman33/NotVulkan-project.git](https://github.com/aliOSman33/NotVulkan-project.git)
+git clone https://github.com/aliOSman33/NotVulkan-project.git
 cd NotVulkan-project
 chmod +x install.sh
 ./install.sh
 ```
+
+## Uninstallation
+
+To remove NotVulkan from your system, run the uninstallation script inside the project directory:
+
+```bash
+chmod +x uninstall.sh
+./uninstall.sh
+```
+
+> **Note:** The uninstaller will ask for your confirmation before deleting the `~/.wine32` and `~/.wine64` prefixes so your saved games remain safe.
 
 ## ⚠️ Status & Performance Note
 
