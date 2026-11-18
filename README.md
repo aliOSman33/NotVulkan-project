@@ -1,17 +1,20 @@
 # NotVulkan
 
-A lightweight, right-click Linux game launcher and prefix isolator optimized for older legacy hardware without native Vulkan support.
+A lightweight, right-click Linux game launcher and smart Wine prefix manager optimized for older legacy hardware without native Vulkan support.
 
 ## Supported Systems
 
-Designed for **Debian-based Linux distributions** (Ubuntu, Linux Mint, Pop!_OS, Debian, etc.) using `apt`.
+Designed for **Debian-based Linux distributions** (**Ubuntu, Linux Mint, MX Linux, Pop!_OS, Debian 12/13**, etc.) using `apt`.  
+Supports **GNOME (Nautilus), Cinnamon (Nemo), MATE (Caja), and XFCE (Thunar)** file managers out-of-the-box.
 
 ## Features
 
-* **Right-Click Integration:** Run `.exe` files instantly from your file manager without opening a terminal.
-* **Smart Prefix Isolation:** Automatically creates and separates 32-bit (`~/.wine32`) and 64-bit (`~/.wine64`) Wine prefixes with optimized Direct3D registry settings.
-* **Unity Engine Fallback:** Automatically detects Unity games and forces OpenGL mode (`renderer=gl`) for older GPUs.
-* **Automated Setup:** Installs required OpenGL libraries, Wine Mono, and dependencies out-of-the-box.
+* **Right-Click & CLI Integration:** Run `.exe` and `.msi` files instantly from your file manager (including native XFCE/Thunar custom actions) or launch from anywhere via the `notvulkan` terminal command.
+* **Smart Hybrid Prefix Architecture:**
+  * On **Wine 10.0+**, uses the unified **WoW64** architecture (`~/.wine64`) to run both 32-bit and 64-bit games seamlessly.
+  * On **Legacy Wine (8.x / 9.x)**, automatically creates and isolates 32-bit (`~/.wine32`) and 64-bit (`~/.wine64`) prefixes with built-in fallback protection.
+* **Global OpenGL Backend Enforcement:** Forces WineD3D OpenGL mode (`renderer=gl`) and disables Vulkan (`vulkan-1=`) across all games, with specialized `-force-d3d11` fallback parameters for **Unity** titles.
+* **Automated Zero-Config Setup:** Silently initializes Wine prefixes (`wineboot --init`), installs required 32/64-bit Mesa OpenGL libraries, **Wine Mono**, and **DirectX 9 (`d3dx9`)** runtimes automatically.
 
 ## Installation
 
@@ -24,16 +27,21 @@ chmod +x install.sh
 ./install.sh
 ```
 
+## Usage
+
+* **From File Manager:** Right-click any `.exe` or `.msi` file and select **Run with NotVulkan**.
+* **From Terminal:** Run `notvulkan path/to/game.exe` (or simply run `notvulkan` to open a file picker dialog).
+
 ## Uninstallation
 
-To remove NotVulkan from your system, run the uninstallation script inside the project directory:
+To cleanly remove NotVulkan (including desktop entries, Thunar right-click actions, and global CLI links), run the uninstallation script inside the project directory:
 
 ```bash
 chmod +x uninstall.sh
 ./uninstall.sh
 ```
 
-> **Note:** The uninstaller will ask for your confirmation before deleting the `~/.wine32` and `~/.wine64` prefixes so your saved games remain safe.
+> **Note:** The uninstaller will ask for your confirmation before deleting the `~/.wine64` and `~/.wine32` prefixes so your installed games and save files remain safe.
 
 ## 🤝 Contributing & Feedback
 
@@ -41,7 +49,7 @@ chmod +x uninstall.sh
 
 * **Found a bug or a game that won't launch?** Please open a report on our [Issues Page](../../issues) using the **Bug Report** template.
 * **Have an idea or improvement?** Feel free to fork the repository and submit a Pull Request, or share your suggestions in the Issues tab.
-* **Compatibility & Performance:** Many games have been tested, but performance may vary depending on your specific legacy hardware and the game engine. Some titles might experience minor performance drops or compatibility issues. Sharing which games work on your system helps other users!
+* **Compatibility & Performance:** Tested on bare-metal legacy hardware (including AMD `r600` non-Vulkan GPUs). Sharing which games work on your system helps other users!
 
 ## 🤖 Acknowledgments
 
