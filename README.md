@@ -37,6 +37,7 @@ chmod +x install.sh
 To cleanly remove NotVulkan (including desktop entries, Thunar right-click actions, and global CLI links), run the uninstallation script inside the project directory:
 
 ```bash
+cd NotVulkan-project
 chmod +x uninstall.sh
 ./uninstall.sh
 ```
